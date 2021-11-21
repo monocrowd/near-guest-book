@@ -38,7 +38,9 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         donation.value = SUGGESTED_DONATION;
         fieldset.disabled = false;
         message.focus();
-      });
+      }) ;
+    }, (err) => {
+      alert(err)
     });
   };
 

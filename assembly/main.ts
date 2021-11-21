@@ -1,9 +1,7 @@
-import { PostedMessage, messages } from './model';
+import { context } from "near-sdk-core";
+import { PostedMessage, messages, senders } from './model';
 
 // --- contract code goes below
-
-// The maximum number of latest messages the contract returns.
-const MESSAGE_LIMIT = 10;
 
 /**
  * Adds a new message under the name of the sender's account id.\
@@ -13,20 +11,25 @@ const MESSAGE_LIMIT = 10;
 export function addMessage(text: string): void {
   // Creating a new message and populating fields with our data
   const message = new PostedMessage(text);
-  // Adding the message to end of the the persistent collection
+  
+  const sender = context.sender;
+  assert(
+    !senders.has(sender),
+    "Sorry, you only sign the guest book once"
+  );
+
+  senders.add(sender);
   messages.push(message);
 }
 
 /**
- * Returns an array of last N messages.\
+ * Returns an array of all messages.\
  * NOTE: This is a view method. Which means it should NOT modify the state.
  */
 export function getMessages(): PostedMessage[] {
-  const numMessages = min(MESSAGE_LIMIT, messages.length);
-  const startIndex = messages.length - numMessages;
-  const result = new Array<PostedMessage>(numMessages);
-  for(let i = 0; i < numMessages; i++) {
-    result[i] = messages[i + startIndex];
+  const result = new Array<PostedMessage>(messages.length);
+  for(let i = 0; i < messages.length; i++) {
+    result[i] = messages[i];
   }
   return result;
 }

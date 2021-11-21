@@ -5,11 +5,10 @@ export default function Messages({ messages }) {
   return (
     <>
       <h2>Messages</h2>
-      {messages.map((message, i) =>
-        // TODO: format as cards, add timestamp
+      {messages.map((message, i) =>        
         <p key={i} className={message.premium ? 'is-premium' : ''}>
-          <strong>{message.sender}</strong>:<br/>
-          {message.text}
+          <strong>{message.sender}</strong> (<small>{message.time}</small>):<br/>
+          {message.text}          
         </p>
       )}
     </>

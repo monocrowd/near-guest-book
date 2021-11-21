@@ -1,4 +1,4 @@
-import { context, u128, PersistentVector } from "near-sdk-as";
+import { context, u128, PersistentSet, PersistentVector } from "near-sdk-as";
 
 /** 
  * Exporting a new class PostedMessage so it can be used outside of this file.
@@ -7,15 +7,13 @@ import { context, u128, PersistentVector } from "near-sdk-as";
 export class PostedMessage {
   premium: boolean;
   sender: string;
+  time: string;
   constructor(public text: string) {
     this.premium = context.attachedDeposit >= u128.from('10000000000000000000000');
     this.sender = context.sender;
+    this.time = new Date(context.blockTimestamp/1000000).toUTCString();
   }
 }
-/**
- * collections.vector is a persistent collection. Any changes to it will
- * be automatically saved in the storage.
- * The parameter to the constructor needs to be unique across a single contract.
- * It will be used as a prefix to all keys required to store data in the storage.
- */
+
 export const messages = new PersistentVector<PostedMessage>("m");
+export const senders = new PersistentSet<string>("s");

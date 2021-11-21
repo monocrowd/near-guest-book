@@ -17,7 +17,7 @@ export default function Form({ onSubmit, currentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="donation">Donation (optional):</label>
+          <label htmlFor="donation">Donation (to be premium guest :)</label>
           <input
             autoComplete="off"
             defaultValue={'0'}
