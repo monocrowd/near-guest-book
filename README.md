@@ -1,5 +1,6 @@
 Guest Book
 ==========
+https://monocrowd.github.io/near-guest-book/
 
 [![Build Status](https://travis-ci.com/near-examples/guest-book.svg?branch=master)](https://travis-ci.com/near-examples/guest-book)
 
