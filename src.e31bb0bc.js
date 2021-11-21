@@ -32357,7 +32357,7 @@ function Form(_ref) {
     required: true
   })), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "donation"
-  }, "Donation (optional):"), /*#__PURE__*/_react.default.createElement("input", {
+  }, "Donation (to be premium guest :)"), /*#__PURE__*/_react.default.createElement("input", {
     autoComplete: "off",
     defaultValue: '0',
     id: "donation",
@@ -32500,6 +32500,8 @@ var App = function App(_ref) {
         fieldset.disabled = false;
         message.focus();
       });
+    }, function (err) {
+      alert(err);
     });
   };
 
@@ -48884,7 +48886,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60618" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60918" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
