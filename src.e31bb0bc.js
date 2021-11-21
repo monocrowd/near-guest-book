@@ -32392,7 +32392,7 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SignIn() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, "This app demonstrates a key element of NEAR\u2019s UX: once an app has permission to make calls on behalf of a user (that is, once a user signs in), the app can make calls to the blockhain for them without prompting extra confirmation. So you\u2019ll see that if you don\u2019t include a donation, your message gets posted right to the guest book."), /*#__PURE__*/_react.default.createElement("p", null, "But if you do add a donation, then NEAR will double-check that you\u2019re ok with sending money to this app."), /*#__PURE__*/_react.default.createElement("p", null, "Go ahead and sign in to try it out!"));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, "Welcome to my guest book."), /*#__PURE__*/_react.default.createElement("p", null, "Go ahead and sign in to try it out!"));
 }
 },{"react":"../node_modules/react/index.js"}],"components/Messages.jsx":[function(require,module,exports) {
 "use strict";
@@ -32411,14 +32411,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Messages(_ref) {
   var messages = _ref.messages;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h2", null, "Messages"), messages.map(function (message, i) {
-    return (
-      /*#__PURE__*/
-      // TODO: format as cards, add timestamp
-      _react.default.createElement("p", {
-        key: i,
-        className: message.premium ? 'is-premium' : ''
-      }, /*#__PURE__*/_react.default.createElement("strong", null, message.sender), " (", /*#__PURE__*/_react.default.createElement("small", null, message.time), "):", /*#__PURE__*/_react.default.createElement("br", null), message.text)
-    );
+    return /*#__PURE__*/_react.default.createElement("p", {
+      key: i,
+      className: message.premium ? 'is-premium' : ''
+    }, /*#__PURE__*/_react.default.createElement("strong", null, message.sender), " (", /*#__PURE__*/_react.default.createElement("small", null, message.time), "):", /*#__PURE__*/_react.default.createElement("br", null), message.text);
   }));
 }
 
@@ -48888,7 +48884,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60471" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60518" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

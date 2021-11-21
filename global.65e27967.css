@@ -113,9 +113,16 @@ button:active {
 }
 
 .is-premium {
-  border-left: 0.25em solid var(--secondary);
-  padding-left: 0.25em;
-  margin-left: -0.5em;
+  /* Font options */
+  font-family: "Pacifico", cursive;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 40px;
+  /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite;
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+  /* Standar Syntax */
+  animation: rainbow 5s infinite;
 }
 
 /*# sourceMappingURL=/global.65e27967.css.map */
